@@ -10,7 +10,11 @@ def main():
     print(f"Screen width: {SCREEN_WIDTH}")
     print(f"Screen height: {SCREEN_HEIGHT}")
 
+    # Load the Asteroids image
+    icon = pygame.image.load('asteroids_logo.png')
+
     pygame.init()
+    pygame.display.set_icon(icon)
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     bg_color = (0, 0, 0)
     
