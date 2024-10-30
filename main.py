@@ -10,6 +10,7 @@ def main():
     print(f"Screen width: {SCREEN_WIDTH}")
     print(f"Screen height: {SCREEN_HEIGHT}")
 
+
     # Load the Asteroids image
     icon = pygame.image.load('asteroids_logo.png')
 
@@ -23,6 +24,12 @@ def main():
 
     x = SCREEN_WIDTH / 2
     y = SCREEN_HEIGHT / 2
+
+    updatable = pygame.sprite.Group()
+    drawable = pygame.sprite.Group()
+
+    Player.containers = (updatable, drawable)
+
     player = Player(x, y)
 
     game_running = True
@@ -31,11 +38,15 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
-            
-        player.update(dt)
+        
+        for item in updatable:
+            item.update(dt)
 
         screen.fill(bg_color)
-        player.draw(screen)
+        
+        for item in drawable:
+            item.draw(screen)
+
         pygame.display.flip()
 
 if __name__ == "__main__":
