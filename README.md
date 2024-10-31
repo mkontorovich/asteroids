@@ -2,7 +2,7 @@
 
 The game Asteroids, coded in Python, using PyGame Python modules.  
 To start the game, first download the repo.  
-Wherever it's unpacked, run `python main.py`.
+From the command line, from within the folder where it's unpacked, run `python main.py`.
 
 ## Game improvements that were implemented:
 
