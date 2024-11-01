@@ -7,7 +7,7 @@ From the command line, from within the folder where it's unpacked, run `python m
 ## Game improvements:
 
 ✅ Added a scoring system, so a high score gets saved after player dies  
-✅ Added sound to player every time they fire a shot
+✅ Added sound to player every time they fire a shot  
 ✅ Added SQLite3 database. The top 10 scores get stored, and the highest score shows in game
 
 ## Future game improvements to work on by priority (highest to lowest):
