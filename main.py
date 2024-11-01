@@ -2,10 +2,11 @@ import pygame
 from constants import *
 from player import *
 from asteroid import *
-from asteroidfield import *
+from asteroid_field import *
 from shot import *
 import sys
 from scoreboard import *
+from sound_manager import *
 
 def main():
     print("Starting asteroids!")
@@ -39,6 +40,10 @@ def main():
     player = Player(x, y) # player is in the center
     asteroid_field = AsteroidField() # draws the asteroid field, so we can see asteroids
     scoreboard = ScoreBoard() # draws the scoreboard, so we can see our score
+    sound_manager = SoundManager()
+
+    last_shot_time = 0
+    bullet_cooldown = 0.2
 
     game_running = True
     while (game_running):
@@ -46,7 +51,13 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
-        
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_SPACE:
+                    current_time = pygame.time.get_ticks() / 1000
+                    if current_time - last_shot_time >= bullet_cooldown:  # Check if cooldown is over
+                        sound_manager.play_bullet_sound()
+                        last_shot_time = current_time  # Update last shot time
+
         for item in updatable:
             item.update(dt)
 

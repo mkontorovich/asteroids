@@ -1,12 +1,12 @@
 import pygame
 from circleshape import *
 from constants import *
+from sound_manager import *
 
 class Shot(CircleShape):
     def __init__(self, x, y, velocity):
         super().__init__(x, y, SHOT_RADIUS)
 
-        # self.velocity = pygame.Vector2(0, 1).rotate(direction) * PLAYER_SHOOT_SPEED
         self.velocity = velocity
 
         if hasattr(self, "containers"):
