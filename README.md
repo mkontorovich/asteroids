@@ -6,7 +6,7 @@ From the command line, from within the folder where it's unpacked, run `python m
 
 ## Implemented game improvements:
 
-✅ Added a scoring system, so a high score gets saved after player dies
+✅ Added a scoring system, so a high score gets saved after player dies  
 ✅ Added sound to player every time they fire a shot
 
 ## Future game improvements to work on by priority (highest to lowest):
