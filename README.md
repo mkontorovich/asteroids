@@ -4,7 +4,7 @@ The game Asteroids, coded in Python, using PyGame Python modules.
 To start the game, first download the repo.  
 From the command line, from within the folder where it's unpacked, run `python main.py`.
 
-## Implemented game improvements:
+## Game improvements:
 
 ✅ Added a scoring system, so a high score gets saved after player dies  
 ✅ Added sound to player every time they fire a shot
