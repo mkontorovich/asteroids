@@ -4,11 +4,11 @@ The game Asteroids, coded in Python, using PyGame Python modules.
 To start the game, first download the repo.  
 From the command line, from within the folder where it's unpacked, run `python main.py`.
 
-## Game improvements that were implemented:
+## Implemented game improvements:
 
-Added a scoring system, so a high score gets saved after player dies
+✔️ Added a scoring system, so a high score gets saved after player dies
 
-## Future improvements to work on by priority (highest to lowest):
+## Future game improvements to work on by priority (highest to lowest):
 
 Asteroids and player, when they go off screen, have to spawn on the opposite side  
 Title screen with interesting fonts, and instructions on controls  
