@@ -1,6 +1,7 @@
 import pygame
 from constants import *
 import json
+import database
 
 class ScoreBoard():
     def __init__(self, 
@@ -16,7 +17,7 @@ class ScoreBoard():
         self.current_score_position = current_score_position
         self.font = pygame.font.Font(font_path, font_size)
         self.score_file = score_file
-        self.high_scores = self.load_high_score()
+        self.highest_score = self.load_highest_score()
 
     def increase_score(self, points):
         self.score += points
@@ -25,7 +26,7 @@ class ScoreBoard():
         self.score = 0
 
     def draw_high_score(self, screen):
-        score_text = self.font.render(f"High Score: {self.high_scores}", True, self.color)
+        score_text = self.font.render(f"High Score: {self.highest_score}", True, self.color)
         screen.blit(score_text, self.high_score_position)
 
     def draw_current_score(self, screen):
@@ -33,15 +34,11 @@ class ScoreBoard():
         screen.blit(score_text, self.current_score_position)
 
     def save_score(self):
-        if self.score > self.high_scores:
-            self.high_scores = self.score
-            with open(self.score_file, 'w') as file:
-                json.dump({"high_score": self.high_scores}, file)
+        database.add_high_score("Player1", self.score)
 
-    def load_high_score(self):
-        try:
-            with open(self.score_file, 'r') as file:
-                data = json.load(file)
-                return data.get("high_score", 0)
-        except (FileNotFoundError, json.JSONDecodeError):
-            return 0
+    def load_highest_score(self):
+        highest_score = database.get_top_scores()
+        if highest_score: # Check if there is at least one entry
+            # Get the score from the first entry (which is the highest score)
+            return int(highest_score[1]) # The score is in the second column
+        return 0

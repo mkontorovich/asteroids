@@ -7,6 +7,7 @@ from shot import *
 import sys
 from scoreboard import *
 from sound_manager import *
+import database
 
 def main():
     print("Starting asteroids!")
@@ -15,6 +16,7 @@ def main():
 
     # Load the Asteroids image
     icon = pygame.image.load('assets/asteroids_logo.png')
+    database.create_table()
 
     pygame.init()
     pygame.display.set_icon(icon)
@@ -72,6 +74,7 @@ def main():
                 print("Game Over!")
                 scoreboard.save_score()
                 scoreboard.reset_score()
+                print(database.print_scores())
                 sys.exit()
 
         screen.fill(bg_color)
