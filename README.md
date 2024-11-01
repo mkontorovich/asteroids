@@ -6,13 +6,12 @@ From the command line, from within the folder where it's unpacked, run `python m
 
 ## Game improvements that were implemented:
 
-No unique ones so far. Coming up!
+Added a scoring system, so a high score gets saved after player dies
 
 ## Future improvements to work on by priority (highest to lowest):
 
 Asteroids and player, when they go off screen, have to spawn on the opposite side  
 Title screen with interesting fonts, and instructions on controls  
-Add a scoring system  
 Implement multiple lives and respawning  
 Add an explosion effect for the asteroids  
 Add acceleration to the player movement  
