@@ -29,7 +29,7 @@ def add_high_score(player_name, score):
     cursor.execute('SELECT COUNT(*) FROM high_scores')
     count = cursor.fetchone()[0] # Access the first element of the tuple
 
-    if count >= 5:
+    if count >= 10:
         cursor.execute('''
             DELETE FROM high_scores
             WHERE id = (

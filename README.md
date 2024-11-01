@@ -9,11 +9,11 @@ From the command line, from within the folder where it's unpacked, run `python m
 
 ✅ Added a scoring system, so a high score gets saved after player dies  
 ✅ Added sound to player every time they fire a shot  
-✅ Added SQLite3 database. The top 10 scores get stored, and the highest score shows in game
+✅ Added SQLite3 database. The top 10 scores get stored, and the highest score shows in game  
+✅ Added screen wrapping, so asteroids and player show again on the opposite sides
 
 ## Future game improvements to work on by priority (highest to lowest):
 
-Asteroids and player, when they go off screen, have to spawn on the opposite side  
 Title screen with interesting fonts, and instructions on controls  
 Implement multiple lives and respawning. Player has 3 lives in a game session  
 Add an explosion effect for the asteroids  
