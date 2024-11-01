@@ -31,3 +31,4 @@ Add a speed power-up -> you can use the code you wrote to color the ship tempora
 Add bombs that can be dropped  
 Refactor code to be more efficient  
 Person puts in their name when they're dead
+Implement option to switch between keyboard and controller
