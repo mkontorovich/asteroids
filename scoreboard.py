@@ -17,7 +17,7 @@ class ScoreBoard():
         self.current_score_position = current_score_position
         self.font = pygame.font.Font(font_path, font_size)
         self.score_file = score_file
-        self.highest_score = self.load_highest_score()
+        self.highest_score = self.get_highest_score()
 
     def increase_score(self, points):
         self.score += points
@@ -26,7 +26,7 @@ class ScoreBoard():
         self.score = 0
 
     def draw_high_score(self, screen):
-        score_text = self.font.render(f"High Score: {self.highest_score}", True, self.color)
+        score_text = self.font.render(f"High Score: {self.highest_score} ({self.get_highest_score_player()})", True, self.color)
         screen.blit(score_text, self.high_score_position)
 
     def draw_current_score(self, screen):
@@ -36,9 +36,15 @@ class ScoreBoard():
     def save_score(self):
         database.add_high_score("Player1", self.score)
 
-    def load_highest_score(self):
+    def get_highest_score(self):
         highest_score = database.get_top_scores()
         if highest_score: # Check if there is at least one entry
             # Get the score from the first entry (which is the highest score)
-            return int(highest_score[1]) # The score is in the second column
+            return int(highest_score[1])
+        return 0
+    
+    def get_highest_score_player(self):
+        highest_score = database.get_top_scores()
+        if highest_score:
+            return highest_score[0]
         return 0
