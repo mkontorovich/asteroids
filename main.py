@@ -56,7 +56,7 @@ def main():
                     current_time = pygame.time.get_ticks() / 1000
                     if current_time - last_shot_time >= bullet_cooldown:  # Check if cooldown is over
                         sound_manager.play_bullet_sound()
-                        last_shot_time = current_time  # Update last shot time
+                        last_shot_time = current_time
 
         for item in updatable:
             item.update(dt)
