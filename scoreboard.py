@@ -1,15 +1,15 @@
 import pygame
-import constants
+from constants import *
 import json
 
 class ScoreBoard():
     def __init__(self, 
-                 font_path=constants.SCOREBOARD_FONT_FILE,
-                 font_size=constants.SCOREBOARD_FONT_SIZE, 
-                 color=constants.SCOREBOARD_COLOR, 
-                 high_score_position=constants.SCOREBOARD_HIGH_SCORE_POSITION,
-                 current_score_position=constants.SCOREBOARD_CURRENT_SCORE_POSITION,
-                 score_file=constants.SCOREBOARD_FILE):
+                 font_path=SCOREBOARD_FONT_FILE,
+                 font_size=SCOREBOARD_FONT_SIZE, 
+                 color=SCOREBOARD_COLOR, 
+                 high_score_position=SCOREBOARD_HIGH_SCORE_POSITION,
+                 current_score_position=SCOREBOARD_CURRENT_SCORE_POSITION,
+                 score_file=SCOREBOARD_FILE):
         self.score = 0
         self.color = color
         self.high_score_position = high_score_position

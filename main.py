@@ -19,7 +19,7 @@ def main():
     pygame.init()
     pygame.display.set_icon(icon)
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-    bg_color = constants.SCREEN_BG_COLOR
+    bg_color = SCREEN_BG_COLOR
     
     clock = pygame.time.Clock()
     dt = 0
@@ -43,7 +43,7 @@ def main():
     sound_manager = SoundManager()
 
     last_shot_time = 0
-    bullet_cooldown = 0.2
+    bullet_cooldown = BULLET_COOLDOWN
 
     game_running = True
     while (game_running):
