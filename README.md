@@ -8,6 +8,7 @@ From the command line, from within the folder where it's unpacked, run `python m
 
 ✅ Added a scoring system, so a high score gets saved after player dies  
 ✅ Added sound to player every time they fire a shot
+✅ Added SQLite3 database. The top 10 scores get stored, and the highest score shows in game
 
 ## Future game improvements to work on by priority (highest to lowest):
 
@@ -26,4 +27,4 @@ Add a shield power-up
 Add a speed power-up -> you can use the code you wrote to color the ship temporarily  
 Add bombs that can be dropped  
 Refactor code to be more efficient  
-A way to store the highest 10 scores, and person puts in their initials when they're dead
+Person puts in their initials when they're dead
